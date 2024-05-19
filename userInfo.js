@@ -18,18 +18,18 @@ function createUserProfiles(names, modifiedNames) {
 }
 
 // Example usage:
-const originalNames = ["Alice", "Bob", "Charlie", "David", "Eve"];
-const modifiedNames = ["ALICE", "bob", "CHARLIE", "david", "EVE"];
+const originalNames = ["Asare", "Prince", "Cassie", "James", "Shaibu"];
+const modifiedNames = ["ASARE", "PRINCE", "CASSIE", "JAMES", "SHAIBU"];
 
 const userProfiles = createUserProfiles(originalNames, modifiedNames);
 console.log(userProfiles);
 /* Output:
 [
-    { id: 1, originalName: "Alice", modifiedName: "ALICE" },
-    { id: 2, originalName: "Bob", modifiedName: "bob" },
-    { id: 3, originalName: "Charlie", modifiedName: "CHARLIE" },
-    { id: 4, originalName: "David", modifiedName: "david" },
-    { id: 5, originalName: "Eve", modifiedName: "EVE" }
+    { id: 1, originalName: "Asare", modifiedName: "ASARE" },
+    { id: 2, originalName: "Prince", modifiedName: "PRINCE" },
+    { id: 3, originalName: "Cassie", modifiedName: "CASSIE" },
+    { id: 4, originalName: "James", modifiedName: "JAMES" },
+    { id: 5, originalName: "Shaibu", modifiedName: "SHAIBU" }
 ]
 */
 
