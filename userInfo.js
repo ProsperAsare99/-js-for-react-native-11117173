@@ -1,35 +1,37 @@
-let nextId = 1; // Initialize auto-incremented id counter
+// userInfo.js
 
-function createUserProfiles(namesArray, modifiedNamesArray) {
-    if (namesArray.length !== modifiedNamesArray.length) {
-        throw new Error('Arrays must have the same length.');
-    }
-
-    const profiles = [];
-    for (let i = 0; i < namesArray.length; i++) {
-        profiles.push({
-            originalName: namesArray[i],
-            modifiedName: modifiedNamesArray[i],
-            id: nextId++
-        });
-    }
-    return profiles;
+/**
+ * Function that creates user profiles.
+ * - Takes an array of names and an array of modified names.
+ * - Returns an array of objects, each containing originalName, modifiedName, and id.
+ * 
+ * @param {string[]} names - The array of original names.
+ * @param {string[]} modifiedNames - The array of modified names.
+ * @returns {Object[]} - An array of objects each containing originalName, modifiedName, and id.
+ */
+function createUserProfiles(names, modifiedNames) {
+    return names.map((name, index) => ({
+        id: index + 1,  // Auto-incremented ID starting from 1
+        originalName: name,
+        modifiedName: modifiedNames[index]
+    }));
 }
 
-const { processArray, formatArrayStrings } = require('./arrayManipulation');
+// Example usage:
+const originalNames = ["Alice", "Bob", "Charlie", "David", "Eve"];
+const modifiedNames = ["ALICE", "bob", "CHARLIE", "david", "EVE"];
 
-// Test processArray function
-const numbersArray = [1, 2, 3];
-console.log("Processed Array:", processArray(numbersArray));
+const userProfiles = createUserProfiles(originalNames, modifiedNames);
+console.log(userProfiles);
+/* Output:
+[
+    { id: 1, originalName: "Alice", modifiedName: "ALICE" },
+    { id: 2, originalName: "Bob", modifiedName: "bob" },
+    { id: 3, originalName: "Charlie", modifiedName: "CHARLIE" },
+    { id: 4, originalName: "David", modifiedName: "david" },
+    { id: 5, originalName: "Eve", modifiedName: "EVE" }
+]
+*/
 
-// Test formatArrayStrings function
-const stringsArray = ["hello", "mobile", "application"];
-const modifiedArray = processArray(numbersArray);
-console.log("Formatted Array:", formatArrayStrings(stringsArray, modifiedArray));
-
-// Test createUserProfiles function
-const originalNames = ["Asarw", "Prosper", "Shaibu"];
-const modifiedNames = formatArrayStrings(originalNames, modifiedArray);
-console.log("User Profiles:", createUserProfiles(originalNames, modifiedNames));
-
+// Export the function for use in other files (if needed)
 module.exports = createUserProfiles;

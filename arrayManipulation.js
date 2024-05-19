@@ -1,26 +1,53 @@
-function processArray(numberArray) {
-    return numbersArray.map(num=> {
-        return num % 2 === 0 ? num * num : num * 3;
+// arrayManipulation.js
 
-    })
+/**
+ * Function that processes an array of numbers.
+ * - Squares even numbers.
+ * - Triples odd numbers.
+ * 
+ * @param {number[]} arr - The array of numbers to be processed.
+ * @returns {number[]} - A new array with each even number squared and each odd number tripled.
+ */
+function processArray(arr) {
+    return arr.map(num => {
+        if (num % 2 === 0) {
+            return num * num;  // Square the even number
+        } else {
+            return num * 3;    // Triple the odd number
+        }
+    });
 }
 
-function formatArrayStrings(stringsArray, numbersArray) {
-    if (stringsArray.length !== numbersArray.length) { 
-        throw new Error('Arrays must have the same length.');
-    }
-
-    return stringsArray.map((strings, i) => {
-        return numbersArray[i] % 2 === 0 ? strings.toUpperCase() : strings.toLowercase()
-    })
+/**
+ * Function that formats an array of strings based on a corresponding array of numbers.
+ * - Capitalizes the entire string if the corresponding number is even.
+ * - Converts the string to lowercase if the corresponding number is odd.
+ * 
+ * @param {string[]} strings - The array of strings to be formatted.
+ * @param {number[]} numbers - The array of numbers processed by processArray.
+ * @returns {string[]} - A new array of formatted strings.
+ */
+function formatArrayStrings(strings, numbers) {
+    return strings.map((str, index) => {
+        if (numbers[index] % 2 === 0) {
+            return str.toUpperCase();  // Capitalize the entire string if the number is even
+        } else {
+            return str.toLowerCase();  // Convert the string to lowercase if the number is odd
+        }
+    });
 }
 
-module.exports = { processArray,formatArrayStrings};
+// Example usage:
+const inputArray = [1, 2, 3, 4, 5];
+const processedNumbers = processArray(inputArray);
+console.log(processedNumbers);  // Output: [3, 4, 9, 16, 15]
 
-// let process 1 = [1,2,3,4,5,6,7,8,9 ]
-// let process 2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+const stringArray = ["Hello", "World", "JavaScript", "is", "Fun"];
+const formattedStrings = formatArrayStrings(stringArray, processedNumbers);
+console.log(formattedStrings);  // Output: ["hello", "WORLD", "javascript", "IS", "fun"]
 
-// let u = processArray(process)
-// let v = formatArrayStrings(process 2, process 1);
-// console.log(v)
-// console.log(u)
+// Export the functions for use in other files (if needed)
+module.exports = {
+    processArray,
+    formatArrayStrings
+};
