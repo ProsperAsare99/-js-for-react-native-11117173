@@ -15,7 +15,7 @@ function formatArrayStrings(stringsArray, numbersArray) {
     })
 }
 
-//module.exports = { processArray,formatArrayStrings};
+module.exports = { processArray,formatArrayStrings};
 
 // let process 1 = [1,2,3,4,5,6,7,8,9 ]
 // let process 2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
@@ -24,4 +24,3 @@ function formatArrayStrings(stringsArray, numbersArray) {
 // let v = formatArrayStrings(process 2, process 1);
 // console.log(v)
 // console.log(u)
-module.exports = { processArray}
