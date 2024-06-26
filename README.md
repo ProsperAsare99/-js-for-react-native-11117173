@@ -6,6 +6,13 @@ This project includes JavaScript files for performing array manipulation and use
 
 arrayManipulation.js`: Contains functions for processing arrays of numbers and formatting strings based on the processed numbers.
   userInfo.js`: Contains a function for creating user profiles using original and modified names.
+ 
+
+1. Clone the repository:
+
+    sh
+    git clone https://github.com/asareprosper143/(https://github.com/asareprosper143/https://github.com/asareprosper143/-js-for-react-native-11117173/tree/main)
+
 
 FUNCTIONS
 
